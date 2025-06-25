@@ -1,37 +1,17 @@
 ---
-import NavCard from "./Card/NavCard.astro";
-import Sandwich from "./Sandwich.astro";
 import ThemeToggle from "./ThemeToggle.astro";
-
-const btnStyle =
-  "py-4 px-6 sm:py-2 sm:px-4 dark:hover:bg-neutral-800 text-gray-500 dark:text-gray-400  hover:bg-neutral-200/70 dark:hover:text-white hover:text-black rounded-full duration-300";
-
-const active = "font-medium !text-black dark:!text-white";
-
-const pathname = new URL(Astro.request.url).pathname;
-const currentPath = pathname.replace(/\//g, "");
 ---
 
-<NavCard>
-  <div class="hidden sm:flex flex-row items-center">
-    <a class={`${btnStyle} ${currentPath === "" ? active : ""}`} href="/"
-      >Home</a
-    >
-    <a
-      class={`${btnStyle} ${currentPath === "about" ? active : ""}`}
-      href="/about">About</a
-    >
-    <a
-      class={`${btnStyle} ${currentPath === "projects" ? active : ""}`}
-      href="/projects">Projects</a
-    >
-    <a
-      class={`${btnStyle} ${currentPath === "contact" ? active : ""}`}
-      href="/contact">Contact</a
-    >
-  </div>
-  <div class="sm:hidden pl-4">
-    <Sandwich currentPath={currentPath} />
-  </div>
-  <div class="ml-auto sm:ml-5"><ThemeToggle /></div>
-</NavCard>
+<div class="flex items-center p-4 gap-3">
+    <button class="hover">
+        About
+    </button>
+    <button class="hover">
+        Projects
+    </button>
+    <button class="hover">
+        Contact
+    </button>
+    <div class="flex-grow"/>
+    <ThemeToggle />
+</div>

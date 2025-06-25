@@ -1,20 +1,24 @@
 ---
-import Author from "../components/Author.astro";
-import NavBar from "../components/NavBar.astro";
 import MainHead from "./MainHead.astro";
+import "../styles/globals.css";
+import ThemeToggle from "../components/ThemeToggle.astro";
+import NavBar from "../components/NavBar.astro";
 
 const { title, seoTitle, seoDesc } = Astro.props;
 ---
 
-<html lang="en" class="h-screen">
+<!doctype html>
+<html lang="en">
   <MainHead title={title} seoTitle={seoTitle} seoDesc={seoDesc} />
-  <body
-    class="bg-gray-100 dark:bg-darkslate-600 flex flex-col h-full sm:h-auto xl:h-full xl:overflow-hidden"
-  >
-    <NavBar />
-    <slot />
-    <footer class="p-5">
-      <Author />
+  <body class="bg-gray-100 dark:bg-darkslate-600">
+    <header>
+      <NavBar/>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer>
+      <!-- Footer content will go here -->
     </footer>
   </body>
 </html>
