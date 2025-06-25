@@ -2,16 +2,16 @@
 import ThemeToggle from "./ThemeToggle.astro";
 ---
 
-<div class="flex items-center p-4 gap-3">
-    <button class="hover">
+<div class="flex items-center px-1 py-4 sm:p-4 gap-3">
+    <button class="hover dark:bg-slate-500 px-4 py-2">
         About
     </button>
-    <button class="hover">
+    <button class="hover dark:bg-slate-500 px-4 py-2">
         Projects
     </button>
-    <button class="hover">
+    <button class="hover dark:bg-slate-500 px-4 py-2">
         Contact
     </button>
-    <div class="flex-grow"/>
+    <div class="sm:flex-grow hidden sm:flex"/>
     <ThemeToggle />
 </div>

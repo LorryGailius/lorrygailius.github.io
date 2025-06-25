@@ -1,14 +1,7 @@
 ---
-import Contacts from "../components/Contacts.astro";
-import IntroCard from "../components/IntroCard.astro";
-import ProjectsCard from "../components/ProjectsCard.astro";
+import HeroSection from "../components/content/HeroSection.astro";
+import ThemeToggle from "../components/ThemeToggle.astro";
 import MainLayout from "../layouts/MainLayout.astro";
-import { getCollection } from "astro:content";
-import { featured } from "../lib/featured.ts";
-
-const projects = (await getCollection("projects"))
-  .filter((project) => featured.includes(project.data.title))
-  .slice(0, 2);
 ---
 
 <MainLayout
@@ -16,11 +9,14 @@ const projects = (await getCollection("projects"))
   seoTitle="Laurynas Gailius, Software Engineer Portfolio"
   seoDesc="Software Engineer looking to start his career in the IT world with deep focus on fullstack programming"
 >
-  <main
-    class="m-auto mt-5 sm:mt-auto grid gap-2 max-w-2xl relative px-5 sm:px-0 sm:gap-2 md:gap-3 md:grid-cols-3 lg:gap-4 flex-auto"
-  >
-    <IntroCard />
-    <Contacts />
-    <ProjectsCard title="Featured Projects" projects={projects} />
-  </main>
+  <HeroSection />
+  <div class="marquee">
+    <div class="marquee-content">
+      <span>Item 1</span>
+      <span>Item 2</span>
+      <span>Item 3</span>
+      <span>Item 4</span>
+      <span>Item 5</span>
+    </div>
+  </div>
 </MainLayout>

@@ -1,0 +1,27 @@
+---
+import Image from "astro/components/Image.astro";
+import QuickAccess from "./QuickAccess.astro";
+---
+
+<div class="hero-section text-slate-900">
+  <div class="box bg-yellow-300 flex justify-start">
+    <div class="section-title flex flex-col justify-between py-2">
+      <div class="flex">
+        <p class="m-0 font-light text-5xl">
+          <span class="font-bold text-5xl">Hello</span>, I'm <br />
+          <span class="font-bold text-6xl">Laurynas Gailius</span><br />
+        </p>
+      </div>
+      <QuickAccess/>
+    </div>
+    <div class="flex-grow"></div>
+    <div class="image mr-10">
+      <Image
+        src="/images/avatar_mobile.webp"
+        alt="Memoji of Laurynas Gailius"
+        width={300}
+        height={300}
+      />
+    </div>
+  </div>
+</div>

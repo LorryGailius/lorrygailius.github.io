@@ -46,6 +46,7 @@ export default {
       },
       screens: {
         tall: { raw: "(min-height: 825px)" },
+        xs: {raw: "(min-width: 480px)"}, // Extra small screens
         // => @media (min-height: 800px) { ... }
       },
     },
