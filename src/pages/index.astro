@@ -1,7 +1,13 @@
 ---
+import { getCollection } from "astro:content";
 import HeroSection from "../components/content/HeroSection.astro";
-import ThemeToggle from "../components/ThemeToggle.astro";
 import MainLayout from "../layouts/MainLayout.astro";
+import { featured } from "../lib/featured";
+import Projects from "../components/content/Projects.astro";
+
+const projects = (await getCollection("projects"))
+  .filter((project) => featured.includes(project.data.title))
+  .slice(0, 2);
 ---
 
 <MainLayout
@@ -9,7 +15,7 @@ import MainLayout from "../layouts/MainLayout.astro";
   seoTitle="Laurynas Gailius, Software Engineer Portfolio"
   seoDesc="Software Engineer looking to start his career in the IT world with deep focus on fullstack programming"
 >
-  <HeroSection />
+  <HeroSection/>
   <div class="marquee">
     <div class="marquee-content">
       <span>Item 1</span>
@@ -19,4 +25,5 @@ import MainLayout from "../layouts/MainLayout.astro";
       <span>Item 5</span>
     </div>
   </div>
+  <Projects projects={projects} title="Featured Projects" />
 </MainLayout>

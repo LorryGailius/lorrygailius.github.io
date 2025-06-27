@@ -1,0 +1,35 @@
+---
+import { Image } from "astro:assets";
+import { promise } from "astro:schema";
+
+const { projects, title } = Astro.props;
+---
+
+<div class="box bg-yellow-300 text-darkslate-600">
+  <h1 class="font-bold text-2xl">{title}</h1>
+  {
+    projects.map((project: any) => (
+      <div class="mb-2">
+        <div class="flex items-center gap-4 mb-2">
+          <a href={project.data.link}>
+            <Image
+              width={100}
+              height={100}
+              src={project.data.image}
+              alt={`${project.data.title} logo`}
+            />
+          </a>
+          <div>
+            <a href={project.data.link} class="no-underline group">
+              <h1 class="text-xl font-black uppercase tracking-wide border-b-4 border-black pb-1 mb-2 group-hover:bg-black group-hover:text-yellow-300 transition-all duration-200 px-2 py-1">{project.data.title}</h1>
+            </a>
+            <p class="box bg-gray-50 dark:bg-slate-500 !px-2 !py-1">{project.data.description}</p>
+          </div>
+        </div>
+        {project.data.tags.map((tag: string) => (
+          <span class="box !px-2 !py-1 bg-inherit mr-[0.5rem] text-xs font-bold">{tag}</span>
+        ))}
+      </div>
+    ))
+  }
+</div>

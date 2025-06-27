@@ -1,5 +1,9 @@
+---
+const btnStyle = "hover dark:bg-slate-500 px-4 py-2";
+---
+
 <div class="quick-access">
-  <button> GitHub </button>
-  <button> LinkedIn </button>
-  <button> Download CV </button>
+  <button class={btnStyle}> GitHub </button>
+  <button class={btnStyle}> LinkedIn </button>
+  <button class={btnStyle}> <span class="hidden sm:inline">Download </span>CV </button>
 </div>
