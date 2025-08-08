@@ -4,9 +4,9 @@ import Sandwich from "./Sandwich.astro";
 import ThemeToggle from "./ThemeToggle.astro";
 
 const btnStyle =
-  "py-4 px-6 sm:py-2 sm:px-4 dark:hover:bg-neutral-800 text-gray-500 dark:text-gray-400  hover:bg-neutral-200/70 dark:hover:text-white hover:text-black rounded-full duration-300";
+  "py-3 px-4 sm:py-2 sm:px-4 bg-neobrutalism-white dark:bg-neobrutalism-cyan hover:bg-neobrutalism-lime dark:hover:bg-neobrutalism-yellow text-neobrutalism-black font-bold border-2 border-neobrutalism-black hover:shadow-[4px_4px_0px_0px] hover:shadow-neobrutalism-black transition-all duration-200 hover:-translate-x-1 hover:-translate-y-1";
 
-const active = "font-medium !text-black dark:!text-white";
+const active = "!bg-neobrutalism-yellow dark:!bg-neobrutalism-orange !shadow-[4px_4px_0px_0px] !shadow-neobrutalism-black !-translate-x-1 !-translate-y-1";
 
 const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.replace(/\//g, "");

@@ -8,22 +8,23 @@ interface Props {
   colSpan?: string;
   rowSpan?: string;
   href?: string;
+  backgroundColor?: string;
 }
 
-const { title, body, colSpan, rowSpan, href } = Astro.props;
+const { title, body, colSpan, rowSpan, href, backgroundColor = "bg-neobrutalism-white dark:bg-neobrutalism-cyan" } = Astro.props;
 ---
 
 <div
-  class={`bg-white dark:bg-darkslate-500 shadow-2xl shadow-gray-200 dark:shadow-none rounded-3xl p-6 border border-gray-300 dark:border-darkslate-100 flex-none align-start relative w-full col-span-1   ${
+  class={`${backgroundColor} border-4 border-neobrutalism-black shadow-[8px_8px_0px_0px] shadow-neobrutalism-black p-4 flex-none align-start relative w-full col-span-1   ${
     colSpan || "md:col-span-2"
   } ${rowSpan || ""}`}
 >
   {
     href ? (
-      <a href={href} class="h-full w-full">
+      <a href={href} class="h-full w-full group">
         <Icon
           name="ri:arrow-right-up-line"
-          class="h-6 float-right group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform ease-in-out duration-100"
+          class="h-6 float-right group-hover:translate-x-2 group-hover:-translate-y-2 transition-transform ease-in-out duration-200 text-neobrutalism-black"
         />
         <Content title={title} body={body}>
           <slot />

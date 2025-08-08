@@ -43,6 +43,19 @@ export default {
         vu: {
           main: "#78003F",
         },
+        // Neobrutalism color palette
+        neobrutalism: {
+          yellow: "#FFFF00",
+          pink: "#FF00FF",
+          cyan: "#00FFFF",
+          lime: "#00FF00",
+          orange: "#FF8C00",
+          purple: "#8B00FF",
+          red: "#FF0000",
+          blue: "#0080FF",
+          black: "#000000",
+          white: "#FFFFFF",
+        },
       },
       screens: {
         tall: { raw: "(min-height: 825px)" },
