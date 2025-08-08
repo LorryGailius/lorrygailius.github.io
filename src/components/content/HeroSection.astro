@@ -4,24 +4,29 @@ import QuickAccess from "./QuickAccess.astro";
 ---
 
 <div class="hero-section text-slate-900">
-  <div class="box bg-yellow-300 flex justify-start !m-0 !p-0">
-    <div class="section-title flex flex-col justify-between px-4 py-6">
+  <div class="box bg-yellow-300 flex justify-start !m-0 !p-0 border-4 border-black shadow-brutal-xl">
+    <div class="section-title flex flex-col justify-between px-6 py-8">
       <div class="flex">
-        <p class="m-0 font-light text-5xl">
-          <span class="font-bold text-5xl">Hello</span>, I'm <br />
-          <span class="font-bold text-6xl">Laurynas Gailius</span><br />
+        <p class="m-0 font-light text-5xl font-mono">
+          <span class="font-bold text-5xl bg-neon-green px-2 py-1 border-2 border-black shadow-brutal glitch">Hello</span>, I'm <br />
+          <span class="font-bold text-6xl bg-white px-2 py-1 border-2 border-black shadow-brutal mt-2 inline-block transform -rotate-1 glitch">Laurynas Gailius</span><br />
         </p>
       </div>
-      <QuickAccess/>
+      <div class="mt-6">
+        <QuickAccess/>
+      </div>
     </div>
     <div class="flex-grow"></div>
-    <div class="image mr-10">
-      <Image
-        src="/images/avatar_mobile.webp"
-        alt="Memoji of Laurynas Gailius"
-        width={300}
-        height={300}
-      />
+    <div class="image mr-10 self-center hidden md:block">
+      <div class="border-4 border-black shadow-brutal-lg bg-neon-blue p-2 transform rotate-3 floating">
+        <Image
+          src="/images/avatar_mobile.webp"
+          alt="Memoji of Laurynas Gailius"
+          width={300}
+          height={300}
+          class="border-2 border-black"
+        />
+      </div>
     </div>
   </div>
 </div>

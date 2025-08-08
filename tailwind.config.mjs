@@ -43,11 +43,25 @@ export default {
         vu: {
           main: "#78003F",
         },
+        // Neobrutalism color palette
+        neon: {
+          yellow: "#FFFF00",
+          pink: "#FF69B4",
+          green: "#00FF00",
+          blue: "#00BFFF",
+          orange: "#FF4500",
+          purple: "#8A2BE2",
+        },
       },
       screens: {
         tall: { raw: "(min-height: 825px)" },
         xs: {raw: "(min-width: 480px)"}, // Extra small screens
         // => @media (min-height: 800px) { ... }
+      },
+      boxShadow: {
+        'brutal': '4px 4px 0px 0px #000',
+        'brutal-lg': '6px 6px 0px 0px #000',
+        'brutal-xl': '8px 8px 0px 0px #000',
       },
     },
   },

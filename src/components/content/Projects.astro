@@ -1,34 +1,42 @@
 ---
 import { Image } from "astro:assets";
-import { promise } from "astro:schema";
 
 const { projects, title } = Astro.props;
 ---
 
-<div class="box bg-yellow-300 text-darkslate-600">
-  <h1 class="font-bold text-2xl">{title}</h1>
+<div class="box bg-neon-orange text-black border-4 border-black shadow-brutal-xl">
+  <h1 class="font-bold text-3xl uppercase tracking-wide mb-6 bg-white px-4 py-2 border-2 border-black shadow-brutal inline-block transform -rotate-1 glitch">{title}</h1>
   {
     projects.map((project: any) => (
-      <div class="mb-2">
-        <div class="flex items-center gap-4 mb-2">
-          <a href={project.data.link}>
+      <div class="mb-6 bg-white border-2 border-black shadow-brutal p-4 hover:shadow-brutal-lg hover:transform hover:translate-x-1 hover:translate-y-1 transition-all duration-200">
+        <div class="flex items-center gap-4 mb-4">
+          <a href={project.data.link} class="block border-2 border-black shadow-brutal hover:shadow-brutal-lg transition-all duration-200 group">
             <Image
-              width={100}
-              height={100}
+              width={80}
+              height={80}
               src={project.data.image}
               alt={`${project.data.title} logo`}
+              class="block group-hover:scale-110 transition-transform duration-200"
             />
           </a>
-          <div>
-            <a href={project.data.link} class="no-underline group">
-              <h1 class="text-xl font-black uppercase tracking-wide border-b-4 border-black pb-1 mb-2 group-hover:bg-black group-hover:text-yellow-300 transition-all duration-200 px-2 py-1">{project.data.title}</h1>
+          <div class="flex-1">
+            <a href={project.data.link} class="no-underline group block">
+              <h2 class="text-xl font-black uppercase tracking-wide bg-yellow-300 border-2 border-black shadow-brutal group-hover:shadow-brutal-lg group-hover:bg-neon-pink transition-all duration-200 px-3 py-2 mb-3 inline-block glitch">
+                {project.data.title}
+              </h2>
             </a>
-            <p class="box bg-gray-50 dark:bg-slate-500 !px-2 !py-1">{project.data.description}</p>
+            <p class="bg-gray-100 border-2 border-black shadow-brutal px-3 py-2 font-medium">
+              {project.data.description}
+            </p>
           </div>
         </div>
-        {project.data.tags.map((tag: string) => (
-          <span class="box !px-2 !py-1 bg-inherit mr-[0.5rem] text-xs font-bold">{tag}</span>
-        ))}
+        <div class="flex flex-wrap gap-2">
+          {project.data.tags.map((tag: string) => (
+            <span class="bg-neon-green text-black border-2 border-black shadow-brutal px-3 py-1 text-sm font-bold uppercase tracking-wide hover:bg-neon-purple hover:text-white transition-colors duration-200 cursor-default">
+              {tag}
+            </span>
+          ))}
+        </div>
       </div>
     ))
   }

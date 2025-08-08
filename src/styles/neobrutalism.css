@@ -294,33 +294,28 @@ a:hover {
     }
 }
 
-ul {
-    list-style-type: square;
-    margin: 1em 0 1em 2em;
-    padding: 0;
-}
-
-li {
-    font-family: inherit;
-    margin-bottom: 0.5em;
-}
-
+/* Marquee improvements and additional animations */
 .marquee {
     width: 100%;
     overflow: hidden;
     white-space: nowrap;
     font-weight: bold;
-    position: relative
+    position: relative;
+    border-top: 4px solid #000;
+    border-bottom: 4px solid #000;
 }
 
 .marquee .marquee-content {
-    animation: marquee 10s linear infinite
+    animation: marquee 15s linear infinite
 }
 
 .marquee .marquee-content span {
     display: inline-block;
-    padding: 0 20px;
-    font-size: 24px
+    padding: 0 40px;
+    font-size: 24px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 @keyframes marquee {
@@ -330,5 +325,76 @@ li {
 
     100% {
         transform: translateX(-100%)
+    }
+}
+
+/* Enhanced button hover animations */
+.button:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px 0px #000 !important;
+}
+
+/* Floating animation for avatar */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px) rotate(3deg);
+    }
+    50% {
+        transform: translateY(-10px) rotate(3deg);
+    }
+}
+
+.floating {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Glitch effect for headings */
+@keyframes glitch {
+    0% {
+        transform: translate(0);
+    }
+    20% {
+        transform: translate(-2px, 2px);
+    }
+    40% {
+        transform: translate(-2px, -2px);
+    }
+    60% {
+        transform: translate(2px, 2px);
+    }
+    80% {
+        transform: translate(2px, -2px);
+    }
+    100% {
+        transform: translate(0);
+    }
+}
+
+.glitch:hover {
+    animation: glitch 0.3s;
+}
+
+/* Enhanced responsive design */
+@media (max-width: 768px) {
+    .hero-section .box {
+        flex-direction: column;
+    }
+    
+    .hero-section .image {
+        margin: 1rem auto;
+        order: -1;
+    }
+    
+    .marquee .marquee-content span {
+        font-size: 18px;
+        padding: 0 20px;
+    }
+    
+    .section-title p {
+        font-size: 2.5rem !important;
+    }
+    
+    .section-title span {
+        font-size: 3rem !important;
     }
 }
